@@ -1,0 +1,28 @@
+#include <stdio.h>
+int contar(int x);
+
+int main(void) {
+  int n;
+
+  //pegar numero com usuario
+  printf("Digite um numero: \n");
+  scanf("%d", &n);
+
+  // imprimir resultado
+  printf("%d\n", contar(n));
+  
+  return 0;
+}
+
+int contar(int x) {
+
+  //calcular numero de digitos
+static int total = 0;
+  if (x == 0) {
+    return total;
+  }
+  else {
+    total++;
+    return (contar(x / 10));
+  }
+}
